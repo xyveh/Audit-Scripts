@@ -1,0 +1,6 @@
+THIS PROGRAM RUNS VIA:
+  python3 os_fingerprinting.py 
+  From which options will be given. 
+  The lab specifices option 'f'. 
+  But options a and b were added for ease of use. 
+  Also. There were changes to the banner for compatability with python. 
