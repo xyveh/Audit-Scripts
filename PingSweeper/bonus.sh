@@ -1,4 +1,6 @@
 #!/bin/bash
+# File:        bonus.sh
+# Author:      Oshada Palitharathna - ATHENA GROUP
 
 banner() {
 clear
@@ -12,4 +14,19 @@ printf " \e[45m ROCHESTER INSTITUTE OF TECHNOLOGY - DUBAI \e[0m\n"
 printf " \n"
 }
 
+bonus() {
+  printf "\e[42m Please enter the subnet: \e[0m\n"
+  read SUBNET
+  echo " "
+  printf "#############################\n"
+  printf "#### Starting Ping Sweep ####\n"
+  printf "#############################\n"
+  echo " "
+
+  for IP in $(seq  1 254); do
+      ping -c 1 $SUBNET.$IP | tr \\n ' ' | awk '/1 packets received/ {printf "The host " $2 " is active"}';
+  done
+}
+
 banner
+bonus
